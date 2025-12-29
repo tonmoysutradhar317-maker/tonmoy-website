@@ -384,4 +384,97 @@ blockquote {
   transform: translateY(0);
 }
 
+@media (max-width: 600px) {
+
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  /* Hero */
+  .hero {
+    height: auto;
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero h3 {
+    font-size: 1.2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  /* Cards */
+  .card {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Skills bar */
+  .skill {
+    padding: 0 15px;
+  }
+
+  /* About */
+  .about {
+    margin: 60px auto;
+    padding: 15px;
+  }
+
+  .about h1 {
+    font-size: 2rem;
+  }
+
+  .about h2 {
+    font-size: 1.2rem;
+  }
+
+  /* Stats */
+  .stats {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Profile card */
+  .profile-card .card {
+    width: 90%;
+    padding: 25px;
+  }
+
+}
+
+
+@media (max-width: 1024px) {
+
+  .navbar {
+    padding: 20px 30px;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .about {
+    margin: 80px auto;
+    padding: 20px;
+  }
+
+  .stats {
+    gap: 20px;
+  }
+
+}
 
