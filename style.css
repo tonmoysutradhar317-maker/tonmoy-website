@@ -658,6 +658,16 @@ body {
   height: 100%;
   object-fit: cover;
 }
+.avatar {
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 15px rgba(0,200,255,0.4); }
+  50% { box-shadow: 0 0 30px rgba(0,200,255,0.8); }
+  100% { box-shadow: 0 0 15px rgba(0,200,255,0.4); }
+}
+
 
 .front h1,
 .back h2 {
