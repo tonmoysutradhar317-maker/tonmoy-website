@@ -459,7 +459,7 @@ body.contact-page {
   background: url("leather-texture.png") center/cover no-repeat;
   opacity: 0.5;
   mix-blend-mode: overlay;
-  transition: background-position 0.15s ease;
+  transition: background-position 0.35s ease;
 }
 
 @keyframes pulse {
