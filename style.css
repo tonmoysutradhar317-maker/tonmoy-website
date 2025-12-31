@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Outfit:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -554,6 +556,170 @@ blockquote {
 
   .contact-card {
     width: 100%;
+  }
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  overflow: hidden;
+}
+
+.scene {
+  perspective: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: min(90vw, 320px);
+  height: min(130vw, 460px);
+  max-height: 460px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+  cursor: pointer;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.7), 0 0 40px rgba(0,191,255,0.12);
+  border-radius: 20px;
+}
+
+/* SHINES */
+.shine {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  mix-blend-mode: screen;
+  filter: blur(10px);
+  z-index: 4;
+}
+
+.inner-shine {
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  pointer-events: none;
+  background:
+    repeating-radial-gradient(circle at 50% 50%, rgba(0,191,255,0.25) 0px, rgba(0,191,255,0.18) 2px, transparent 6px),
+    linear-gradient(120deg, transparent 25%, rgba(0,191,255,0.45), transparent 65%);
+  mix-blend-mode: screen;
+  opacity: 0.85;
+  filter: blur(0.6px);
+  transform: translateZ(2px);
+  z-index: 2;
+}
+
+/* TEXTURE */
+.card-texture {
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  z-index: 1;
+  pointer-events: none;
+  background: url("leather-texture.png") center/cover no-repeat;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+  transition: background-position 0.15s ease;
+}
+
+/* FACES */
+.face {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #121212, #080808);
+  border-radius: 20px;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.7);
+  backface-visibility: hidden;
+  text-align: center;
+  padding: 2.5rem 2rem;
+  color: #ccc;
+  z-index: 3;
+}
+
+.front .avatar {
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  border-radius: 50%;
+  background: #0bbfff;
+  color: #050505;
+  font-size: 2.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px #0bbfff88;
+}
+
+.front h1,
+.back h2 {
+  font-family: 'Cormorant Garamond', serif;
+  margin-top: 1.2rem;
+  font-size: 2rem;
+}
+.role {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #0bbfff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 5px #0bbfff, 0 0 10px #0bbfff, 0 0 15px #0bbfff;
+  margin-top: 0.5rem;
+}
+
+/* .role{
+  color: #0bbfff; Neon cyan
+  font-family: 'Dancing Script', cursive; Stylish script font
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 5px #0bbfff, 0 0 10px #0bbfff, 0 0 15px #0bbfff;
+  margin-top: 0.5rem;
+} */
+
+
+.studio {
+  display: block;
+  margin-top: 2rem;
+  color: #0bbfff;
+  letter-spacing: 0.03em;
+  font-size: 0.7rem;
+}
+
+.back {
+  transform: rotateX(180deg);
+}
+
+.backdescription {
+  display: block;
+  margin-top: 2rem;
+  color: #85CFED;
+  letter-spacing: 0.03em;
+  font-size: 0.7rem;
+}
+
+small {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #555;
+  font-size: 0.65rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .card {
+    height: 420px;
   }
 }
 
