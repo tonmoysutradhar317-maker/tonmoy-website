@@ -419,7 +419,7 @@ body.contact-page {
   z-index: 1;
   pointer-events: none;
   background: url("leather-texture.png") center/cover no-repeat;
-  opacity: 0.4;
+  opacity: 0.2;
   mix-blend-mode: overlay;
   transition: background-position 0.15s ease;
 }
