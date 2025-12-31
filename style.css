@@ -403,8 +403,12 @@ body.contact-page {
   border-radius: 18px;
   pointer-events: none;
   background:
-    repeating-radial-gradient(circle at 50% 50%, rgba(0,191,255,0.25) 0px, rgba(0,191,255,0.18) 2px, transparent 6px),
-    linear-gradient(120deg, transparent 25%, rgba(0,191,255,0.45), transparent 65%);
+    linear-gradient(
+      120deg,
+      transparent 25%,
+      rgba(0,191,255,0.45),
+      transparent 65%
+    );
   mix-blend-mode: screen;
   opacity: 0.85;
   filter: blur(0.6px);
