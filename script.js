@@ -12,7 +12,6 @@ let currentY = 0;
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
-/* START DRAG */
 function startDrag(x, y) {
   isDragging = true;
   startX = x;
@@ -21,7 +20,6 @@ function startDrag(x, y) {
   innerShine.style.opacity = 0.9;
 }
 
-/* MOVE DRAG */
 function moveDrag(x, y) {
   if (!isDragging) return;
 
@@ -36,10 +34,8 @@ function moveDrag(x, y) {
     rotateY(${currentY}deg)
   `;
 
-  // Texture movement on drag
   texture.style.transform = `translate(${currentY * 0.3}px, ${currentX * 0.3}px) translateZ(0.5px)`;
 
-  // Outer shine
   const shineX = 50 + currentY * 1.4;
   const shineY = 50 + currentX * 1.4;
   const intensity = Math.min(Math.abs(currentX) + Math.abs(currentY), 40) / 40;
@@ -54,7 +50,6 @@ function moveDrag(x, y) {
     )
   `;
 
-  // Inner CD-style shine
   const innerX = 50 + currentY * 1.8;
   const innerY = 50 + currentX * 1.8;
   innerShine.style.background = `
@@ -63,36 +58,30 @@ function moveDrag(x, y) {
   `;
 }
 
-/* END DRAG */
 function endDrag() {
   if (!isDragging) return;
   isDragging = false;
-
   shine.style.opacity = 0;
   innerShine.style.opacity = 0.5;
 
   card.style.transition = "transform 0.6s ease";
   card.style.transform = `rotateX(${isFlipped ? 180 : 0}deg) rotateY(0deg)`;
-
   setTimeout(() => {
     card.style.transition = "";
   }, 600);
 }
 
-/* MOUSE EVENTS */
 card.addEventListener("mousedown", e => startDrag(e.clientX, e.clientY));
 window.addEventListener("mousemove", e => moveDrag(e.clientX, e.clientY));
 window.addEventListener("mouseup", endDrag);
 
-/* HOVER TEXTURE */
-card.addEventListener("mousemove", (e) => {
+card.addEventListener("mousemove", e => {
   if (isDragging) return;
   const x = (e.offsetX / card.clientWidth) * 20;
   const y = (e.offsetY / card.clientHeight) * 20;
   texture.style.backgroundPosition = `${x}px ${y}px`;
 });
 
-/* TOUCH EVENTS */
 card.addEventListener("touchstart", e => {
   const t = e.touches[0];
   startDrag(t.clientX, t.clientY);
@@ -103,7 +92,6 @@ window.addEventListener("touchmove", e => {
 });
 window.addEventListener("touchend", endDrag);
 
-/* TAP / CLICK FLIP */
 card.addEventListener("click", () => {
   if (isDragging) return;
   isFlipped = !isFlipped;
