@@ -415,11 +415,11 @@ body.contact-page {
 .card-texture {
   position: absolute;
   inset: 0;
-  border-radius: 15px;
+  border-radius: 20px;
   z-index: 1;
   pointer-events: none;
   background: url("leather-texture.png") center/cover no-repeat;
-  opacity: 0.2;
+  opacity: 0.5;
   mix-blend-mode: overlay;
   transition: background-position 0.15s ease;
 }
