@@ -435,6 +435,9 @@ body.contact-page {
   overflow: hidden;
   margin: 0 auto 15px;
   box-shadow: 0 0 20px rgba(0, 200, 255, 0.4);
+
+  position: relative;
+  z-index: 6;
 }
 
 .avatar img {
