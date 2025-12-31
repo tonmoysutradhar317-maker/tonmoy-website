@@ -412,18 +412,6 @@ body.contact-page {
   z-index: 2;
 }
 
-.card-texture {
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
-  z-index: 1;
-  pointer-events: none;
-  background: url("leather-texture.png") center/cover no-repeat;
-  opacity: 0.5;
-  mix-blend-mode: overlay;
-  transition: background-position 0.15s ease;
-}
-
 .face {
   position: absolute;
   inset: 0;
@@ -453,6 +441,18 @@ body.contact-page {
 
 .avatar {
   animation: pulse 3s infinite;
+}
+
+.card-texture {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  z-index: 1;
+  pointer-events: none;
+  background: url("leather-texture.png") center/cover no-repeat;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  transition: background-position 0.15s ease;
 }
 
 @keyframes pulse {
