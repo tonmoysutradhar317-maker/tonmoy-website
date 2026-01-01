@@ -450,7 +450,7 @@ body.contact-page {
   animation: pulse 3s infinite;
 }
 
-.card-texture {
+/*.card-texture {
   position: absolute;
   inset: 0;
   border-radius: 20px;
@@ -460,7 +460,7 @@ body.contact-page {
   opacity: 0.5;
   mix-blend-mode: overlay;
   transition: background-position 0.35s ease;
-}
+} */
 
 @keyframes pulse {
   0% { box-shadow: 0 0 15px rgba(0,200,255,0.4); }
